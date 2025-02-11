@@ -180,12 +180,12 @@ body {
 /* FOOOTER CSS======================================================================================================================= */
  
 
-/* Footer Styling - Dark Theme */
+/* Footer Styling - Light Grey Background */
 .footer {
-  background-color: #121212; /* Dark background */
+  background-color: #2d2d2d; /* Dark Grey */
   padding: 40px 0;
   font-family: Arial, sans-serif;
-  color: #ddd; /* Light gray text */
+  color: #ccc; /* Light text for contrast */
 }
 
 /* Footer Layout */
@@ -212,7 +212,7 @@ body {
   font-size: 16px;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #f1f1f1; /* White text for section titles */
+  color: #fff; /* White heading */
 }
 
 .footer-column ul {
@@ -226,13 +226,11 @@ body {
 
 .footer-column ul li a {
   text-decoration: none;
-  color: #bbb; /* Light gray links */
+  color: #bbb; /* Softer text */
   font-size: 14px;
-  transition: color 0.3s ease-in-out;
 }
 
 .footer-column ul li a:hover {
-  color: #ffffff; /* White on hover */
   text-decoration: underline;
 }
 
@@ -241,11 +239,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #333; /* Dark border */
+  border-top: 1px solid #444; /* Lighter grey border */
   padding-top: 20px;
   margin-top: 20px;
   font-size: 14px;
-  color: #bbb; /* Light gray */
+  color: #aaa;
 }
 
 /* Footer Icons */
@@ -258,21 +256,13 @@ body {
   width: 20px;
   height: 20px;
   opacity: 0.7;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
 }
 
 .footer-icons a img:hover {
   opacity: 1;
-  transform: scale(1.1); /* Slight zoom on hover */
 }
 
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footer-columns {
-      flex-direction: column;
-      text-align: center;
-  }
-}
 
 
 /* THE BOOK NOW BUTTON =========================================================================================================================*/
