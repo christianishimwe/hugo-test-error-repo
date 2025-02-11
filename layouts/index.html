@@ -1,29 +1,83 @@
 {{ define "main" }}
-
-<section class="section bd-masthead">
-  <div class="container-xxl">
-    <div class="col-md-8 mx-auto text-center my-5">
-      <img class="d-block mx-auto mb-3" src="{{ `images/logo.svg` | relURL }}" width="150" height="150" alt="Bootstrap">
-      <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
-      <p class="lead mb-4">{{ .Site.Params.Description }}</p>
-      <a class="btn btn-bd-primary btn-lg px-4 mb-2" href="https://github.com/filipecarneiro/hugo-bootstrap-theme" role="button">Get Started</a>
-      <p class="text-muted mb-0">Open-source MIT Licensed.</p>
+<section class="section all-front-page">
+  <section class="section bd-masthead">
+    <div class="container-xxl">
+      <div class="col-md-8 mx-auto text-center my-5">
+        <div class="loader"></div>
+        <h1 class="display-4 fw-semibold mb-3">{{ .Site.Title }}</h1>
+        <p class="lead mb-4">{{ .Site.Params.Description }}</p>
+        <button class="btn">
+          Book Now!
+        </button>
+        <p class="text-muted mb-0">Book with Ease, for your next Destination in Kigali!</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section container my-3">
-  {{ partial "features" . }}
-</section>
+  <section class="section container my-3">
+    {{ partial "features" . }}
+  </section>
 
-<section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Latest Posts</h3>
-  {{ partial "latest-posts" . }}
-</section>
+  <section class="section container my-3">
+    <h3 class="text-secondary text-center my-5">Latest Posts</h3>
+    {{ partial "latest-posts" . }}
+  </section>
 
-<section class="section container my-3">
-  <h3 class="text-secondary text-center my-5">Featured Pages</h3>
-  {{ partial "featured-pages" . }}
-</section>
+  <section class="section container my-3">
+    <h3 class="text-secondary text-center my-5"></h3>
+    <p></p>
+  </section>
 
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-columns">
+        <!-- Support Section -->
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">AirCover</a></li>
+            <li><a href="#">Disability Support</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+            <li><a href="#">Report a Concern</a></li>
+          </ul>
+        </div>
+
+        <!-- Hosting Section -->
+        <div class="footer-column">
+          <h4>Hosting</h4>
+          <ul>
+            <li><a href="#">List Your Property</a></li>
+            <li><a href="#">Host Resources</a></li>
+            <li><a href="#">Community Forum</a></li>
+            <li><a href="#">Safety Guidelines</a></li>
+            <li><a href="#">Partner with LaLa</a></li>
+          </ul>
+        </div>
+
+        <!-- About LaLa Section -->
+        <div class="footer-column">
+          <h4>About LaLa</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Footer -->
+      <div class="footer-bottom">
+        <p>© 2025 LaLa, Inc. · <a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Sitemap</a></p>
+        <div class="footer-icons">
+          <a href="#"><img src="{{ `images/facebook.png` | relURL }}" alt="Facebook"></a>
+          <a href="#"><img src="{{ `images/instagram.png` | relURL }}" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
 {{ end }}

@@ -7,9 +7,33 @@
     --bd-pink-rgb: 214,51,132;
 
     .bd-masthead {
-        padding: 3rem 0;
-        background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%),radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
+        background-image: url("images/background.jpg");
+        position: relative;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        /* Background Gradient 
+        background-image: linear-gradient(
+            180deg, 
+            rgba(var(--bs-body-bg-rgb), 0.01), 
+            rgba(var(--bs-body-bg-rgb), 1) 85%
+        ),
+        radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),
+        radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),
+        radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),
+        radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%); */
     }
+    
+    /* Ensure Content Inside is Centered */
+    .bd-masthead .container-xxl {
+        position: relative;
+        z-index: 2; /* Keeps content above any overlays */
+    }
+    
 
     .btn-bd-primary {
         --bs-btn-font-weight: 600;
@@ -28,14 +52,29 @@
 }
 
 .navbar {
-    @extend .navbar-dark;
+  @extend .navbar-dark;
 
-    --bd-violet-rgb: 112.520718,44.062154,249.437846;
-    
-    padding: .75rem 0;
-    background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95));
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(0,0,0,0.15);
+  --bd-grey-rgb: 150, 150, 150; /* Define a grey color */
+
+  padding: 0.75rem 0;
+  background-color: rgba(200, 200, 200, 0.95); /* Light grey background */
+  background-image: linear-gradient(to bottom, rgba(180, 180, 180, 1), rgba(160, 160, 160, 0.95)); /* Smooth grey gradient */
+  
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure navbar text and links remain readable */
+.navbar .nav-link {
+  color: #333 !important; /* Dark grey text */
+}
+
+.navbar .nav-link:hover {
+  color: #000 !important; /* Black on hover */
+}
+
+/* Ensure the navbar brand (logo or name) is visible */
+.navbar-brand {
+  color: #222 !important; /* Dark grey */
 }
 
 .text-violet {
@@ -59,3 +98,214 @@
         transform: rotate(-2deg) scale(1.1);
     }
 }
+
+
+
+/** THE LOGO ----------------------------------------------------------------------------------------------------**/
+.loader {
+    position: relative;
+    width: 120px;
+    height: 90px;
+    margin: 0 auto;
+  }
+  
+  .loader:before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #2a9d8f;
+    animation: loading-bounce 0.5s ease-in-out infinite alternate;
+  }
+  
+  .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 7px;
+    width: 45px;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+    animation: loading-step 1s ease-in-out infinite;
+  }
+  
+  @keyframes loading-bounce {
+    0% {
+      transform: scale(1, 0.7);
+    }
+  
+    40% {
+      transform: scale(0.8, 1.2);
+    }
+  
+    60% {
+      transform: scale(1, 1);
+    }
+  
+    100% {
+      bottom: 140px;
+    }
+  }
+  
+  @keyframes loading-step {
+    0% {
+      box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+              0 10px 0 #f2f2f2,
+              -35px 50px 0 #f2f2f2,
+              -70px 90px 0 #f2f2f2;
+    }
+  
+    100% {
+      box-shadow: 0 10px 0 #f2f2f2,
+              -35px 50px 0 #f2f2f2,
+              -70px 90px 0 #f2f2f2,
+              -70px 90px 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+  /* body =========================================================================================================================*/
+  /* Set dark background */
+body {
+    background-color: #1a1a1a; /* Dark theme */
+    color: #ddd; /* Light gray text */
+    font-family: 'Poppins', sans-serif;
+}
+  /* ======================================================================================================================= */
+
+
+  /* latest posts css =========================================================================================================================*/
+   /* Initial state: hidden and moved down */
+.post-card {
+  background-color: black;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When the row becomes visible, animate the posts */
+.row.show .post-card {
+  opacity: 1;
+  transform: translateY(1000);
+}
+
+
+/* FOOOTER CSS======================================================================================================================= */
+ 
+
+/* Footer Styling - Light Grey Background */
+.footer {
+  background-color: #2d2d2d; /* Dark Grey */
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+  color: #ccc; /* Light text for contrast */
+}
+
+/* Footer Layout */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Footer Column */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #fff; /* White heading */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #bbb; /* Softer text */
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #444; /* Lighter grey border */
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Footer Icons */
+.footer-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.footer-icons a img:hover {
+  opacity: 1;
+}
+
+
+
+/* THE BOOK NOW BUTTON =========================================================================================================================*/
+  /* From Uiverse.io by ShrinilDhorda */ 
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+  /* ======================================================================================================================= */
